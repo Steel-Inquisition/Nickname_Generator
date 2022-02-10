@@ -1,0 +1,98 @@
+﻿<Window x:Class="NickName_Generator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NickName_Generator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="850">
+    <Canvas Name="MenuSpace" >
+
+        <!-- MAIN PROBLEMS WITH THE CODE: confusing variable names, way too much rectangles/objects created, somewhat confusing to navigate-->
+        
+        
+        
+        <!-- Text -->
+
+        <!-- Title Text -->
+        <TextBlock Height="20" Width="200" Text="Random NickName Generator" Canvas.Left="110" Canvas.Top="0" />
+
+        <!-- Type First Name Box -->
+        <TextBlock Height="20" Width="80" Text="Type First Name:" Canvas.Left="405" Canvas.Top="50" FontSize="10" />
+
+        <!-- Type Last Name Box -->
+        <TextBlock Height="20" Width="80" Text="Type Last Name:" Canvas.Left="405" Canvas.Top="70" FontSize="10" />
+
+        <!-- Type Add Name Box -->
+        <TextBlock Height="20" Width="80" Text="Type NickName (+):" Canvas.Left="405" Canvas.Top="240" FontSize="9" />
+
+        <!-- Type Remove Name Box -->
+        <TextBlock Height="20" Width="80" Text="Type NickName (-):" Canvas.Left="405" Canvas.Top="260" FontSize="9" />
+
+
+        <!-- Top Segment -->
+
+
+        <!-- Very Top Box -->
+        <Rectangle Height="25" Width="650" Canvas.Left="100" Canvas.Top="0" Stroke="Black"/>
+
+        <!-- Main Top Body Box -->
+        <Rectangle Name="Body" Height="225" Width="650" Canvas.Left="100" Canvas.Top="0" Stroke="Black"/>
+
+        <!-- Seperator Box -->
+        <Rectangle Height="385" Width="300" Canvas.Left="100" Canvas.Top="0" Stroke="Black"/>
+
+        <!-- Top Inner Box Left -->
+        <Rectangle Height="150" Width="250" Canvas.Left="125" Canvas.Top="50" Stroke="Black"/>
+
+        <!-- Top Inner Box Right -->
+        <Rectangle Height="150" Width="250" Canvas.Left="485" Canvas.Top="50" Stroke="Black"/>
+
+
+        <!-- Bottom Segment  -->
+
+        
+        <!-- Output Nicknames Here using Scroll Box -->
+        <ScrollViewer Height = "110" Width = "250" Canvas.Left="485" Canvas.Top="90" Name="scroll"
+            HorizontalScrollBarVisibility = "Auto" VerticalScrollBarVisibility = "Auto">
+            <TextBlock x:Name="DisplayNickNames" Text="" />
+        </ScrollViewer>
+
+        <!-- Main Bottom Box -->
+        <Rectangle Height="160" Width="650" Canvas.Left="100" Canvas.Top="224" Stroke="Black"/>
+
+        <!-- Inner Bottom Box Left -->
+        <Rectangle Height="130" Width="250" Canvas.Left="125" Canvas.Top="240" Stroke="Black"/>
+
+        <!-- Output All Nicknames Here using Scroll Box -->
+        <ScrollViewer Height = "130" Width = "245" Canvas.Left="130" Canvas.Top="240" Name="scrollDownAll"
+            HorizontalScrollBarVisibility = "Auto" VerticalScrollBarVisibility = "Auto">
+            <TextBlock x:Name="DisplayAllNickNames" Text="" />
+        </ScrollViewer>
+
+        <!-- Bottom Inner Box Right -->
+        <Rectangle Height="130" Width="250" Canvas.Left="485" Canvas.Top="240" Stroke="Black"/>
+
+        <!-- Output if Added Or Removed -->
+        <ScrollViewer Height = "90" Width = "245" Canvas.Left="490" Canvas.Top="280" Name="scrollAddOrRemove"
+            HorizontalScrollBarVisibility = "Auto" VerticalScrollBarVisibility = "Auto">
+            <TextBlock x:Name="DisplayAddedOrRemoved" Text="" Width="300" />
+        </ScrollViewer>
+
+
+        <!-- Buttons -->
+        <Button Height="20" Width="200" Content="Display a Random Nickname" Click="Button_Click" Canvas.Left="145" Canvas.Top="70"/>
+        <Button Height="20" Width="200" Content="Display All Nicknames" Click="Button_Click" Canvas.Left="145" Canvas.Top="90"/>
+        <Button Height="20" Width="200" Content="Add a Nickname" Click="Button_Click" Canvas.Left="145" Canvas.Top="110"/>
+        <Button Height="20" Width="200" Content="Remove a Nickname" Click="Button_Click" Canvas.Left="145" Canvas.Top="130"/>
+        <Button Height="20" Width="200" Content="Exit" Click="Button_Click" Canvas.Left="145" Canvas.Top="170"/>
+
+        <!-- Get Input Top Row-->
+        <TextBox Height="20" Width="250" Canvas.Left="485" Canvas.Top="50" Name="inputFirstName" Text="insert"/>
+        <TextBox Height="20" Width="250" Canvas.Left="485" Canvas.Top="70" Name="inputLastName" Text="insert"/>
+
+        <!-- Get Input Bottom Row-->
+        <TextBox Height="20" Width="250" Canvas.Left="485" Canvas.Top="240" Name="inputAddNickName" Text="insert"/>
+        <TextBox Height="20" Width="250" Canvas.Left="485" Canvas.Top="260" Name="inputRemoveNickName" Text="insert"/>
+    </Canvas>
+</Window>
