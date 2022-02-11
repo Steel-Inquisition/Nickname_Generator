@@ -7,6 +7,8 @@ namespace NickName_Generator
 {
     public partial class MainWindow : Window
     {
+        
+        // Global Variables
 
         // Create List of Nicknames
         List<string> nickNames = new List<string>()
@@ -16,6 +18,8 @@ namespace NickName_Generator
 
         // Create Random Object
         Random randomNickName = new Random();
+        
+        // The Methods
 
         // This will be loaded first
         public MainWindow()
